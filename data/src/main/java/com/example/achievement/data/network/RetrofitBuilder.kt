@@ -6,7 +6,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitBuilder {
     private val baseUrl = "https://786b905e-735c-4be6-adfb-949d5dadee32.mock.pstmn.io/"
     fun getInstance(): Retrofit {
-        return Retrofit.Builder().baseUrl(baseUrl)
-            .addConverterFactory(GsonConverterFactory.create()).build()
+        return Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
     }
 }

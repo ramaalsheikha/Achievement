@@ -5,5 +5,5 @@ import retrofit2.http.GET
 
 interface AchievementApi {
      @GET("/achievements")
-     fun getAchievements():AchievementResponseModel
+     suspend fun getAchievements():AchievementResponseModel
 }

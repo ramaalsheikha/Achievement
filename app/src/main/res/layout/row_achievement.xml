@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/TextAppearance.AppCompat.Title"
+        android:id="@+id/text_view_title"
+        android:layout_width="0dp"
+        android:background="@color/secondary"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:text="@{model.title}"
+        android:paddingVertical="5dp"
+        android:textColor="@color/on_secondary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Personal Records"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_label"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/secondary"
+        android:gravity="center"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="5dp"
+        android:text="{model.label}"
+        android:textColor="@color/on_secondary_variant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTop0f="parent"
+        app:layout_constraintBottom_toBottomOf="@id/text_view_title"
+        tools:text=" 4 of 6"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:spanCount="2"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/text_view_title"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

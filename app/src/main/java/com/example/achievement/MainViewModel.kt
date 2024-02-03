@@ -10,17 +10,21 @@ import kotlinx.coroutines.launch
 
 class MainViewModel:ViewModel() {
     private val repository = Repository()
-    val achievementsSuccessLiveData:MutableLiveData<AchievementResponseModel> = MutableLiveData()
+    val achievementsSuccessLiveData:MutableLiveData<List<AchievementResponseModel>> = MutableLiveData()
+    val exceptionsSuccessLiveData:MutableLiveData<Exception> = MutableLiveData()
 
     init {
         getAchievement()
     }
     private fun getAchievement(){
         viewModelScope.launch {
-            val response = repository.getAchievement()
-            achievementsSuccessLiveData.postValue(response)
-            delay(5000)
-            achievementsSuccessLiveData.postValue(response)
+            try {
+                val response = repository.getAchievement()
+                achievementsSuccessLiveData.postValue(response)
+            }catch (e:Exception){
+                exceptionsSuccessLiveData.postValue(e)
+            }
+
         }
 
 

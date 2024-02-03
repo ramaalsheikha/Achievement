@@ -18,10 +18,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initObserver() {
-        viewModel.achievementsSuccessLiveData.observe(this){ response->
-            Toast.makeText(this, response.toString(), Toast.LENGTH_SHORT).show()
-
+        viewModel.achievementsSuccessLiveData.observe(this) { response ->
+            Toast.makeText(this, "Response = $response", Toast.LENGTH_SHORT).show()
         }
+        viewModel.exceptionsSuccessLiveData.observe(this){ e ->
+                Toast.makeText(this,"Error = ${ e.localizedMessage}", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun initViewModel() {

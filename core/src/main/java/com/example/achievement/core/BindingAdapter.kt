@@ -1,15 +1,12 @@
 package com.example.achievement.core
 
-
-import android.app.Activity
-import android.content.Context
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 
 @BindingAdapter(value=["app:imageUrl"])
-fun imageView(imageView:ImageView,url:String?){
-   Glide.with(Activity().baseContext)
+fun ImageView.imageUrl(url:String?){
+   Glide.with(this.context)
       .load(url)
-      .into(imageView)
+      .into(this)
 }

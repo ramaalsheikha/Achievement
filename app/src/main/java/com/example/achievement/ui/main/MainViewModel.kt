@@ -1,4 +1,4 @@
-package com.example.achievement
+package com.example.achievement.ui.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -4,9 +4,8 @@ import com.example.achievement.data.api.AchievementApi
 import com.example.achievement.data.model.AchievementResponseModel
 import com.example.achievement.data.network.RetrofitBuilder
 
-class Repository {
+class Repository(private val achievement:AchievementApi) {
    suspend fun getAchievement():List<AchievementResponseModel>{
-        val achievementApi = RetrofitBuilder.getInstance().create(AchievementApi::class.java)
-        return achievementApi.getAchievements().data
-    }
+       return achievement.getAchievements().data
+   }
 }

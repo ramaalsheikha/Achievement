@@ -1,20 +1,18 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
-    namespace = "com.example.achievement"
-    compileSdk = 34
+    namespace = "com.example.achievement.core"
+    compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.achievement"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
     buildFeatures{
         viewBinding = true
@@ -40,13 +38,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":data"))
-    implementation(project(":core"))
+
     implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    // ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
 
 }

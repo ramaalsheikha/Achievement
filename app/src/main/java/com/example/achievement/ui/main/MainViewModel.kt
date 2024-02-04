@@ -5,11 +5,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.achievement.data.model.AchievementResponseModel
 import com.example.achievement.data.repository.Repository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class MainViewModel:ViewModel() {
-    private val repository = Repository()
+@HiltViewModel
+class MainViewModel(private val repository: Repository):ViewModel() {
     val achievementsSuccessLiveData:MutableLiveData<List<AchievementResponseModel>> = MutableLiveData()
     val exceptionsSuccessLiveData:MutableLiveData<Exception> = MutableLiveData()
 

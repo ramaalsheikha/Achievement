@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -39,6 +41,7 @@ android {
     }
 }
 
+
 dependencies {
     implementation(project(":data"))
     implementation(project(":core"))
@@ -48,5 +51,9 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     // ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
+    //dagger hilt
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
 
 }

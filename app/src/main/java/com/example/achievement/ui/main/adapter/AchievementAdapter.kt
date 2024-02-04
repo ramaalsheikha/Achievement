@@ -14,7 +14,7 @@ class AchievementAdapter(private val list: List<AchievementResponseModel>) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(model: AchievementResponseModel) {
             binding.model = model
-            binding.recyclerViewRecords.adapter =
+            binding.recyclerViewRecords.adapter = RecordsAdapter(model.records)
         }
 
     }

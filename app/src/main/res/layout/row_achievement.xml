@@ -41,7 +41,7 @@
         android:text="@{model.label}"
         android:textColor="@color/on_secondary_variant"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTop0f="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/text_view_title"
         tools:text=" 4 of 6"/>
 
